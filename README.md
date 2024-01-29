@@ -109,11 +109,11 @@ Manual Web para alumnos del módulos Full-Stack
     <td><strong>Carlos</strong> <br>
    <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a></td>
     <td><strong>Diego</strong> <br>
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=orange" target="_blank"></a></td>
+   <a href="https://github.com/sierrita2000" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=orange" target="_blank"></a></td>
  </tr>
  <tr align="center">
     <td><strong>Leonor</strong> <br>
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=purple" target="_blank"></a></td>
+   <a href="https://github.com/LeonorSorianoCei" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=purple" target="_blank"></a></td>
     <td><strong>Pablo M</strong> <br>
    <a href="https://github.com/PabloMocholi" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=cyan" target="_blank"></a></td>
     <td>&nbsp;</td>
@@ -123,7 +123,7 @@ Manual Web para alumnos del módulos Full-Stack
 Profe:
 
 -  **_Tomás_**  
-   <a href="https://github.com/SinaCulsan" target="_blank"> <img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=yellow" target="_blank"></a>
+   <a href="https://github.com/tomasCEI" target="_blank"> <img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=yellow" target="_blank"></a>
 
 ## Librerías JS de este manual:
 
