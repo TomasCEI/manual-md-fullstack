@@ -7,19 +7,19 @@ const letras = ["a", "b", "c"];
 
 // recorremos el array e imprimios por consola cada valor.
 letras.forEach(function (letra) {
-  console.log(letra);
+   console.log(letra);
 });
 ```
 
-## Modificar elemtnos con ForEach
+## Modificar elementos con ForEach
 
 La función interna del `forEach` puede recibir un 2ndo valor, que es el `índice` del elemento actual. Esto es útil para acceder y hacer modificaciones a los elementos del vector original.
 
 ```js
 const letras = ["a", "b", "c"];
 letras.forEach(function (letra, indice) {
-  console.log(letra, indice);
-  letras[indice] = letra.toUpperCase();
+   console.log(letra, indice);
+   letras[indice] = letra.toUpperCase();
 });
 
 console.log(letras); // (3) ["A", "B", "C"]
@@ -32,7 +32,7 @@ Si deseamos generar una copia de la lista, podemos utilizar el método `map()`, 
 ```js
 const numeros = [1, 2, 3, 4, 5];
 const nuevaLista = numeros.map(function (numero) {
-  return numero * 2;
+   return numero * 2;
 });
 
 console.log(numeros); //  (5) [1, 2, 3, 4, 5]

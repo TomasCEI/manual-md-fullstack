@@ -67,7 +67,7 @@ function mostrarCapitulo(capitulo) {
    console.log(`Mostrando el capítulo: ${capitulo}`);
 }
 
-// Escuchar cambios en la URL
+// Escuchar cambios en la URL (si hago click en un enlace con "#")
 window.addEventListener("popstate", function () {
    console.log("hice popstate cambie de página");
    const capituloSeleccionado = urlParams.get("cap") || "Bienvenida";
@@ -126,7 +126,7 @@ const fetchMarkdown = async (archivo) => {
    );
 };
 
-// Function to add content before the pre element
+// Function to add content before the pre elements (para agregar título a los bloques de código)
 function addContentBeforePre() {
    //const preElement = document.querySelectorAll('pre[class^="language-"]');
    const preElement = document.querySelectorAll('pre[class*="language-"]'); // es un vector vacío o con items
@@ -254,6 +254,15 @@ function imprimirTarjetas() {
             contentDiv.innerHTML += customHTML;
          });
          addContentBeforePre();
+
+         // scroll hacia el href seleccionado
+         const hash = window.location.hash;
+         if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+               element.scrollIntoView();
+            }
+         }
       })
       .catch((error) => {
          console.error("Error fetching or processing Markdown:", error);
