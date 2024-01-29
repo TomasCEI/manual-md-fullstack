@@ -1,0 +1,188 @@
+{
+   "title": "Manual de Full-Stack CEI 2024",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png",
+   "github": "https://tomascei.github.io/manual-md-fullstack",
+   "authors": [
+      {
+         "nombre": "Tomás Sánchez Gavier",
+         "short": "Tomás SG",
+         "email": "tomassanchez@profesorado.cei.es",
+         "img": "https://avatars.githubusercontent.com/u/147064032?v=4",
+         "url": "https://github.com/tomasCEI/"
+      }
+   ],
+   "capitulos": [
+      {
+         "slug": "diseno-web-js",
+         "titulo": "JavaScript",
+         "ficheros": [
+            {
+               "slug": "js-introduccion",
+               "titulo": "01. Introducción",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "01-introduccion.md"
+            },
+            {
+               "slug": "js-sintaxis",
+               "titulo": "02. Sintaxis Básica",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "02-sintaxis.md"
+            },
+            {
+               "slug": "js-numeros",
+               "titulo": "03. Números y Mat.",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "03-numeros.md"
+            },
+            {
+               "slug": "js-strings",
+               "titulo": "04. Strings",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "04-strings.md"
+            },
+            {
+               "slug": "js-comentarios",
+               "titulo": "05. Comentarios",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "05-comentarios.md"
+            },
+            {
+               "slug": "js-consola",
+               "titulo": "06. Uso de Consola",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "06-consola.md"
+            },
+            {
+               "slug": "js-variables",
+               "titulo": "07. Variables",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "07-variables.md"
+            },
+            {
+               "slug": "manipulacion-dom",
+               "titulo": "08. Manipulación del DOM",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "08-manipulacion-dom.md"
+            },
+            {
+               "slug": "vectores",
+               "titulo": "09. Vectores/Arrays",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "09-vectores.md"
+            },
+            {
+               "slug": "manipulacion-vectores",
+               "titulo": "10. Manipulación Arrays",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "10-manipulacion-vectores.md"
+            },
+            {
+               "slug": "recorrer-vectores",
+               "titulo": "11. Recorrer Arrays",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "11-recorrer-vectores.md"
+            },
+            {
+               "slug": "find-en-vector",
+               "titulo": "12. Buscar item",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "12-find-en-vector.md"
+            },
+            {
+               "slug": "filter-en-vector",
+               "titulo": "13. Buscar mutiples items",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "13-filter-en-vector.md"
+            },
+            {
+               "slug": "fetch",
+               "titulo": "14. Uso de Fetch",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "14-fetch.md"
+            },
+            {
+               "slug": "timeouts",
+               "titulo": "15. Timeout e Intervalos",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "15-timeouts.md"
+            }
+         ]
+      },
+      {
+         "slug": "ejemplos",
+         "titulo": "Ejemplos",
+         "ficheros": [
+            {
+               "slug": "cara-seca",
+               "titulo": "Cara o Seca",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "cara-seca.md"
+            },
+            {
+               "slug": "piedra-papel-tijera",
+               "titulo": "Piedra Papel o Tijera",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "piedra-papel-tijera.md"
+            },
+            {
+               "slug": "manipulacion-dom",
+               "titulo": "Manipulación del DOM",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "dom-manipulation.md"
+            },
+            {
+               "slug": "music-player",
+               "titulo": "Reproductor de Música",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "music-player.md"
+            },
+            {
+               "slug": "styling-cards",
+               "titulo": "Tarjetas con Estilo",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "styling-cards.md"
+            }
+         ]
+      },
+      {
+         "slug": "bibliografia",
+         "titulo": "Bibliografía",
+         "ficheros": [
+            {
+               "slug": "bibliografia-FrontEnd",
+               "titulo": "Links - FrontEnd",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "diseno-web-front.md"
+            },
+            {
+               "slug": "bibliografia-js",
+               "titulo": "Links - JS",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "diseno-web-js.md"
+            }
+         ]
+      }
+   ]
+}

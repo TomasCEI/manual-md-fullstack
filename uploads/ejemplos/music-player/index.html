@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Music Player</title>
+      <style>
+         body {
+            margin: 0;
+            padding: 0;
+         }
+
+         .card {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+         }
+         .catbot {
+            width: 200px;
+            height: 200px;
+            border: 1px dashed black;
+            border-radius: 50%;
+
+            /* Paso 3: incluir a CatBot dentro del SVG con JS  */
+            /* display:none; */
+         }
+
+         .playlist {
+            height: 600px;
+            overflow-y: scroll;
+            margin: 10px;
+            border: 1px solid #ccc;
+         }
+
+         .playlist-song {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+         }
+
+         .playlist-song h1,
+         .playlist-song h3,
+         .playlist-song p {
+            margin: 0;
+         }
+
+         .playlist-song img {
+            width: 75px;
+            height: 75px;
+            border-radius: 10px;
+            margin-right: 10px;
+         }
+         .playlist-song.active {
+            background-color: red;
+         }
+         .playlist-song:hover {
+            background-color: gray;
+         }
+
+         /* -------------------- Audio ProgressBar Linean -------------------- */
+         .audio-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #ccc;
+            position: relative;
+
+            /* Paso 1: Crear un elemento que represente la barra de progreso */
+            /* display:none; */
+         }
+
+         .audio-bar .audio-bar-line {
+            width: 0%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+         }
+
+         /* -------------------- Audio ProgressBar Circular -------------------- */
+         .audio-bar-round {
+            width: 200px;
+            height: 200px;
+            padding: 4px;
+            position: relative;
+
+            /* Paso 2: Crear un elemento que represente la barra de progreso de manera circular  */
+            /* display:none; */
+         }
+
+         .progress-circle {
+            fill: none;
+            stroke: red;
+            stroke-width: 10;
+            stroke-linecap: round; /* borde de puntas round */
+            transform: rotate(
+               90deg
+            ); /* rotar 90 grados para que comience de abajo izq */
+            transform-origin: center;
+            transition: stroke-dashoffset 0.5s ease;
+         }
+
+         /* centro ambos elementos */
+         .progress-circle,
+         .catbot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+         }
+      </style>
+   </head>
+   <body>
+      Un buen ejemplo de reproductor de música podría ser este de
+      <a href="https://www.lofi.cafe/">Música LoFi</a>
+
+      <!-- 
+    SVGs con animación JS
+
+    - Para mostrar SVGs animados se pueden encapsular dentro de un <iframe> o dentro de un elemento <object> 
+    - Puedo modificar la posicion del SVG utilizando sus propiedaes viewBox
+        <svg viewBox="x y width height" xmlns="http://www.w3.org/2000/svg">
+          Your SVG content and animations go here
+        </svg>
+
+        en mi caso de "cat-test.svg" cambie de viewBox="0 0 300 300" a viewBox="100 40 100 100"
+  -->
+
+      <style>
+         /* estilos de AI personalizados */
+         #e20raisEQ6V1 {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+
+            /* Paso 4: incluir a CatBot como SVG Personalizable  */
+            /* display:none; */
+         }
+
+         svg {
+            transition: all 0.5s ease;
+         }
+
+         svg .pupila {
+            transition: all 0.2s ease;
+         }
+
+         svg.rave polygon {
+            stroke-width: 1;
+            stroke: red;
+         }
+      </style>
+
+      <svg
+         id="e20raisEQ6V1"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="112 76 75 75"
+         shape-rendering="geometricPrecision"
+         text-rendering="geometricPrecision">
+         <g
+            id="e20raisEQ6V2"
+            transform="matrix(.58334 0 0 0.648355 76.644708 53.20072)">
+            <polygon
+               id="e20raisEQ6V3"
+               points="0,-13.823293 13.146733,-4.271632 8.125128,11.183279 -8.125128,11.183279 -13.146733,-4.271632 0,-13.823293"
+               transform="matrix(2.760093 0 0 2.415903 126.500403 94.689552)"
+               fill="#d2dbed"
+               stroke-width="0" />
+            <g transform="translate(-124.083176-5.67085)">
+               <ellipse
+                  rx="9.157931"
+                  ry="10.509099"
+                  transform="matrix(.681635 0 0 0.842343 241.862711 87.619712)"
+                  fill="#eff1f5"
+                  stroke="#000" />
+               <ellipse
+                  rx="3.121183"
+                  ry="9.676305"
+                  transform="matrix(.4 0 0 0.936224 241.86271 87.619714)"
+                  stroke-width="0"
+                  class="pupila" />
+            </g>
+            <g transform="translate(-106.641466-5.178359)">
+               <ellipse
+                  rx="9.157931"
+                  ry="10.509099"
+                  transform="matrix(.681635 0 0 0.842343 241.862711 87.619712)"
+                  fill="#eff1f5"
+                  stroke="#000" />
+               <ellipse
+                  rx="3.121183"
+                  ry="9.676305"
+                  transform="matrix(.4 0 0 0.936224 241.86271 87.619714)"
+                  stroke-width="0"
+                  class="pupila" />
+            </g>
+            <path
+               d="M135.658347,101.360542q47.863137-4.064407,49.936631,2.884048"
+               transform="matrix(.997382 0.072311-.072311 0.997382-55.559463-17.350988)"
+               fill="none"
+               stroke="#3f5787"
+               stroke-width="0.6" />
+            <path
+               d="M135.658347,101.360542q47.863137-4.064407,49.936631,2.884048"
+               transform="translate(-62.368273-1.003469)"
+               fill="none"
+               stroke="#3f5787"
+               stroke-width="0.6" />
+            <path
+               d="M135.658347,101.360542q47.863137-4.064407,49.936631,2.884048"
+               transform="matrix(-.994765 0.102185 0.102185 0.994765 303.257934-20.882239)"
+               fill="none"
+               stroke="#3f5787"
+               stroke-width="0.6" />
+            <path
+               d="M135.658347,101.360542q47.863137-4.064407,49.936631,2.884048"
+               transform="matrix(-1 0 0 1 314.953614 0.022229)"
+               fill="none"
+               stroke="#3f5787"
+               stroke-width="0.6" />
+            <polygon
+               points="0,-7.330889 2.154494,-2.965407 6.97209,-2.265369 3.486045,1.132685 4.308989,5.930814 0,3.665445 -4.308989,5.930814 -3.486045,1.132685 -6.97209,-2.265369 -2.154494,-2.965407 0,-7.330889"
+               transform="matrix(-.707109 0.707105-.707105-.707109 126.466192 100.624272)"
+               fill="#e52ad2"
+               stroke="#000" />
+         </g>
+      </svg>
+
+      <!-- quitar "controls" si no desean ver la barra de progreso -->
+      <audio src="" autoplay controls></audio>
+
+      <!-- external audio bar -->
+      <div class="audio-bar">
+         <div class="audio-bar-line"></div>
+      </div>
+
+      <!-- round audio bar -->
+      <div class="audio-bar-round">
+         <object class="catbot" type="image/svg+xml" data="./cat-test.svg">
+            Your browser does not support SVG
+         </object>
+
+         <svg class="progress-circle" width="100%" height="100%">
+            <circle cx="50%" cy="50%" r="100" stroke-dasharray="630"></circle>
+         </svg>
+      </div>
+
+      <!-- Controlos de reproducción -->
+      <div class="card">
+         Current song:
+         <h1 id="txt_title"></h1>
+         <h3 id="txt_time"></h3>
+         <button onclick="prevItem()">Prev</button>
+         <button onclick="nextItem()">Next</button>
+      </div>
+
+      <!-- Lista de Temas Dinámica -->
+      <div class="card playlist">-- no songs --</div>
+
+      <!--scripts para el manejo de las barras de audio (linear y rouneded) -->
+      <script>
+         const audio = document.querySelector("audio");
+         const audioBar = document.querySelector(".audio-bar .audio-bar-line");
+
+         // round audio bar (paso 3)
+         const audioBarCircle = document.querySelector(
+            ".progress-circle circle"
+         );
+
+         // selector del gato estático (paso 4)
+         const gatoEstatico = document.querySelector("#e20raisEQ6V1");
+         const pupilas = document.querySelectorAll(".pupila");
+
+         audio.addEventListener("timeupdate", () => {
+            var currentTime = audio.currentTime;
+            var duration = audio.duration;
+
+            // console.log(audio.currentTime, "/" ,audio.duration);
+            const progress = (currentTime / duration) * 100;
+
+            // linear audio bar
+            audioBar.style.width = `${progress}%`;
+
+            // round audio bar
+            // Calculate the dash offset based on the progress value
+            const dashOffset = 630 - (630 * progress) / 100; // * -1 para que vaya en sentido contrario a las manecillas del reloj
+
+            // Set the dash offset to show the progress
+            audioBarCircle.style.strokeDashoffset = dashOffset;
+
+            pupilas.forEach((pupila) => {
+               // create random number between 0.4 and 1.5
+               const scale = Math.random() * (1.5 - 0.4) + 0.4;
+
+               // select a random color
+               const A_colors = [
+                  "red",
+                  "green",
+                  "blue",
+                  "yellow",
+                  "purple",
+                  "orange",
+               ]; // colores en texto
+               const A_rgbaColors = [
+                  "255,0,0",
+                  "0,255,0",
+                  "0,0,255",
+                  "255,255,0",
+                  "255,0,255",
+                  "255,165,0",
+               ]; // colores en rgb
+               const color =
+                  A_colors[Math.floor(Math.random() * A_colors.length)];
+               const rgbaColor =
+                  A_rgbaColors[Math.floor(Math.random() * A_rgbaColors.length)];
+
+               // pupilas
+               pupila.setAttribute(
+                  "transform",
+                  `matrix(${scale} 0 0 0.936224 241.86271 87.619714)`
+               );
+               pupila.setAttribute("fill", color);
+
+               gatoEstatico.classList.add("rave"); // contorno rojo con clase .rave
+
+               gatoEstatico.style.background = `rgba(${rgbaColor},0.2)`; // fondo claro
+               gatoEstatico.style.border = `5px dashed ${color}`; // borde del gato
+            });
+         });
+      </script>
+
+      <!-- scripts para el reproductor de música -->
+      <script>
+         const playlist = document.querySelector(".playlist");
+
+         var A_songs = [
+            {
+               "title": "Titulo 1",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/10/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+               "artist": "Artista 1",
+            },
+            {
+               "title": "Titulo 2",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/11/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+               "artist": "Artista 2",
+            },
+            {
+               "title": "Titulo 3",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/12/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+               "artist": "Artista 3",
+            },
+            {
+               "title": "Titulo 4",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/13/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+               "artist": "Artista 4",
+            },
+            {
+               "title": "Titulo 5",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/14/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+               "artist": "Artista 5",
+            },
+            {
+               "title": "Titulo 6",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/15/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+               "artist": "Artista 6",
+            },
+            {
+               "title": "Titulo 7",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/16/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+               "artist": "Artista 7",
+            },
+            {
+               "title": "Titulo 8",
+               "time": "03:22:20",
+               "img": "https://picsum.photos/id/17/200/300",
+               "audio":
+                  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+               "artist": "artista 8",
+            },
+         ];
+
+         playlist.innerHTML = "";
+         A_songs.forEach((song, index) => {
+            playlist.innerHTML += `
+        <div class="playlist-song">
+          <img src="${song.img}" alt="">
+          <div>
+            <h1>${song.title}</h1>
+            <h3>${song.artist}</h3>
+            <p><i class="fa fa-clock"> ${song.time}</i></p>
+        </div></div>
+      `;
+         });
+
+         /* 
+      Listeners y funciones para cada item de la playlist
+
+      - Click en cualquier tema
+      - Click en boton next y prev
+      - Funciones: nextItem(), prevItem(), loadSong()
+    
+    */
+
+         // Para controles de reproducción
+         const txt_time = document.getElementById("txt_time");
+         const txt_title = document.getElementById("txt_title");
+         let currentItem = 0;
+
+         // Para nuestro AI
+         const catbot = document.querySelector(".catbot");
+
+         const playlistItems = document.querySelectorAll(".playlist-song");
+         playlistItems.forEach((item, index) => {
+            item.addEventListener("click", () => {
+               currentItem = index;
+               loadSong();
+            });
+         });
+
+         function nextItem() {
+            currentItem++;
+            if (currentItem > playlistItems.length - 1) {
+               currentItem = 0;
+            }
+            loadSong();
+         }
+
+         function prevItem() {
+            currentItem--;
+            if (currentItem < 0) {
+               currentItem = playlistItems.length - 1;
+            }
+            loadSong();
+         }
+
+         function loadSong() {
+            // quito el active a todos los items de mi lista
+            playlistItems.forEach((item) => {
+               item.classList.remove("active");
+            });
+            // agrego el active al item actual
+            playlistItems[currentItem].classList.add("active");
+
+            txt_title.innerHTML = `${A_songs[currentItem].title} <small>(${A_songs[currentItem].artist})</small>`;
+            txt_time.innerText = A_songs[currentItem].time;
+
+            // cargo la canción en el reproductor
+            audio.src = A_songs[currentItem].audio;
+
+            // cargo la imagen en el reproductor
+            catbot.style.background = `url(${A_songs[currentItem].img})`;
+            // background cover ( en JS las propiedaes de 2 palabaras se escriben en camelCase ej: background-size => backgroundSize, background-color => backgroundColor, border-radius => borderRadius, etc)
+            catbot.style.backgroundSize = "cover";
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>CSS Slyding Cards</title>
+      <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+         }
+
+         body {
+            background-color: #eeeeea;
+         }
+
+         .wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+         .container {
+            height: 400px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: start;
+         }
+
+         .card {
+            width: 80px;
+            border-radius: 0.75rem;
+            background-size: cover;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 2rem;
+            margin: 0 10px;
+            display: flex;
+            align-items: flex-end;
+            transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+            box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+         }
+
+         .card > .row {
+            color: white;
+            display: flex;
+            flex-wrap: nowrap;
+         }
+
+         .card > .row > .icon {
+            background: #223;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+         }
+
+         .card > .row > .description {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            height: 80px;
+            width: 520px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition-delay: 0.3s;
+            transition: all 0.3s ease;
+         }
+
+         .description p {
+            color: #b0b0ba;
+            padding-top: 5px;
+         }
+
+         .description h4 {
+            text-transform: uppercase;
+         }
+
+         .container input {
+            display: none;
+         }
+
+         input:checked + label {
+            width: 600px;
+         }
+
+         input:checked + label .description {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>CSS Slyding Cards</h1>
+      <div>
+         Checkbox classes:<br />
+         <input type="checkbox" name="checkbox" id="chk_1" checked />
+         <label for="chk_1">item1</label>
+         <input type="checkbox" name="checkbox" id="chk_2" />
+         <label for="chk_2">item2</label>
+         <br />
+         También tengo un script de KeyBindings, genial para usar en cualquiera
+         de mis APPS (ver abajo el código)
+      </div>
+      <div class="wrapper">
+         <div class="container">
+            <input type="radio" name="slide" id="c1" checked />
+            <label
+               for="c1"
+               class="card"
+               style="
+                  background-image: url('https://d1vcy8ih94g58p.cloudfront.net/eyJrZXkiOiIyNzI2ODRcL2JGelNLZXdxR08wVkp5b3ZoNWJ0MzN3dFQzZ2lzcXlkQjlUREZnR2suanBlZyIsImJ1Y2tldCI6IndpcmVzdG9jay1vcmlnaW5hbC1wcm9kdWN0aW9uIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MTIsImhlaWdodCI6NTEyLCJmaXQiOiJpbnNpZGUifX19?signature=39a0c7d3994d6eeb3b3711cdca4443d62cc98e22012d0b7f3f5ea0b972514135');
+               ">
+               <div class="row">
+                  <div class="icon">1</div>
+                  <div class="description">
+                     <h4>Winter</h4>
+                     <p>Winter has so much to offer - creative activities</p>
+                  </div>
+               </div>
+            </label>
+            <input type="radio" name="slide" id="c2" />
+            <label
+               for="c2"
+               class="card"
+               style="
+                  background-image: url('https://d1vcy8ih94g58p.cloudfront.net/eyJrZXkiOiIyNzI2ODRcL0NacEpFZjFJOHlYM00wMHc0emhOU2hTUWlyNGNkaXBKeHgxUUFXMUEuanBlZyIsImJ1Y2tldCI6IndpcmVzdG9jay1vcmlnaW5hbC1wcm9kdWN0aW9uIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MTIsImhlaWdodCI6NTEyLCJmaXQiOiJpbnNpZGUifX19?signature=feb8575f77e291a996bf6adba448a94da1c45a5c780adeeb77497878c3dbacad');
+               ">
+               <div class="row">
+                  <div class="icon">2</div>
+                  <div class="description">
+                     <h4>Digital Technology</h4>
+                     <p>Gets better every day - stay tuned</p>
+                  </div>
+               </div>
+            </label>
+
+            <input type="radio" name="slide" id="c3" />
+            <label
+               for="c3"
+               class="card"
+               style="
+                  background-image: url('https://d1vcy8ih94g58p.cloudfront.net/eyJrZXkiOiIyNzI2ODRcL3RTRFBFd1B3UnlteVZEbFlqbUlrOUJIN29Gdnd5VERUcHNqNkx5Q1MuanBlZyIsImJ1Y2tldCI6IndpcmVzdG9jay1vcmlnaW5hbC1wcm9kdWN0aW9uIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MTIsImhlaWdodCI6NTEyLCJmaXQiOiJpbnNpZGUifX19?signature=03ce863bb4caa45c12fe1d92d20bf014822d53383c699b99fa5388c2fd4b4b34');
+               ">
+               <div class="row">
+                  <div class="icon">3</div>
+                  <div class="description">
+                     <h4>Globalization</h4>
+                     <p>Help people all over the world</p>
+                  </div>
+               </div>
+            </label>
+            <input type="radio" name="slide" id="c4" />
+            <label
+               for="c4"
+               class="card"
+               style="
+                  background-image: url('https://d1vcy8ih94g58p.cloudfront.net/eyJrZXkiOiIyNzI2ODRcL2ltaXFWRHE4TUplOVMxVVJOTldNY05pYXR2M3VRczZ6NlpNU1I2ZUUuanBlZyIsImJ1Y2tldCI6IndpcmVzdG9jay1vcmlnaW5hbC1wcm9kdWN0aW9uIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MTIsImhlaWdodCI6NTEyLCJmaXQiOiJpbnNpZGUifX19?signature=4bcd7e169757c962bdf4a1dc11055cd7a9de2caa8e8404070c6ce278574ecdc3');
+               ">
+               <div class="row">
+                  <div class="icon">4</div>
+                  <div class="description">
+                     <h4>New technologies</h4>
+                     <p>Space engineering becomes more and more advanced</p>
+                  </div>
+               </div>
+            </label>
+         </div>
+      </div>
+
+      <!-- Radio and Checkbox input Debugger -->
+      <script>
+         /**
+          * Script para actualizar la clase de los inputs radio y checkbox
+          * para poder debuggear y visualizar en "Elements tab".
+          * Incluso se podrían aplicar estilos CSS según el estado de los mismos
+          * (checked o no)
+          */
+         const validTypes = ["radio", "checkbox"];
+
+         // Function to update the class based on the checked state
+         function updateRadioClass(type) {
+            const inputs = document.querySelectorAll(`input[type="${type}"]`);
+
+            inputs.forEach((input) => {
+               // Utiliza el 2ndo paramater "force" para forzar el cambio de clase con true/false según el estado del input
+               input.classList.toggle("debug_checked", input.checked);
+               //   if (input.checked) {
+               //     input.classList.add("debug_checked");
+               //     //console.log("cambiando:", type);
+               //   } else {
+               //     input.classList.remove("debug_checked");
+               //   }
+            });
+         }
+
+         // Attach the update function to the change event of radio inputs
+         document.addEventListener("change", function (e) {
+            //if (e.target.type === "radio" || e.target.type === "checkbox") {
+            if (validTypes.includes(e.target.type)) {
+               updateRadioClass(e.target.type);
+            }
+         });
+
+         // Initial update to reflect the initial state
+         // updateRadioClass("radio");
+         // updateRadioClass("checkbox");
+         validTypes.forEach((type) => updateRadioClass(type));
+      </script>
+
+      <!-- Keyboard bindings for radio Buttons  (1,2,3,4)-->
+      <script>
+         document.addEventListener("keydown", function (event) {
+            // Get the pressed key
+            const key = event.key;
+            console.log("key:", key);
+
+            // Check if the pressed key is a number between 1 and 4
+            if (key >= "1" && key <= "4") {
+               // Form the corresponding radio input id
+               const radioId = "c" + key;
+
+               // Check if the radio input with the id exists
+               const radioInput = document.getElementById(radioId);
+               if (radioInput) {
+                  // if exists, select the radio input
+                  radioInput.checked = true;
+               }
+            }
+         });
+      </script>
+
+      <script>
+         const keyBindings = {
+            "1": () => myKeyNumber(1),
+            "2": () => myKeyNumber(2),
+            "3": () => myKeyNumber(3),
+            "4": () => myKeyNumber(4),
+            "5": () => myKeyNumber(5),
+            "a": myFunction2,
+            "A": myFunction2, // Bind "A" to the same function as "a" (no hace falta porque estoy haciendo toLowerCase() )
+            "Shift+a": myFunction3,
+            "9": myFunction4,
+            "Control+a": myFunction5,
+         };
+
+         function myKeyNumber(number) {
+            console.log("Key pressed:", number);
+         }
+
+         function myFunction1() {
+            console.log("Function 1");
+         }
+
+         function myFunction2() {
+            console.log("Function 2");
+         }
+
+         function myFunction3() {
+            console.log("Function 3");
+         }
+
+         function myFunction4() {
+            console.log("Function 4");
+         }
+
+         function myFunction5() {
+            console.log("Function 5");
+         }
+
+         document.addEventListener("keydown", function (e) {
+            const key = e.key.toLowerCase(); // A es lo mismo que a
+            console.log("key es:", key);
+
+            // permite usar Shift+a, Control+a, Alt+a, etc.
+            const modifier =
+               (e.shiftKey ? "Shift+" : "") + (e.ctrlKey ? "Control+" : "");
+            const combination = modifier + key;
+
+            if (keyBindings.hasOwnProperty(combination)) {
+               keyBindings[combination]();
+               e.preventDefault(); // Prevent default action (e.g., scrolling or selecting text)
+            }
+         });
+      </script>
+
+      <!-- Keyboard bindings for radio Buttons -->
+   </body>
+</html>

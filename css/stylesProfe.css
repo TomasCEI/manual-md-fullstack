@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+.text-danger {
+    color: red;
+}
+
+.card {
+    padding:15px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+footer {
+    position: fixed;
+    background-color: lightgray;
+    width: 100%;
+    bottom: 0;
+}
+
+/*
+pre.language-html::before{
+    content: "Title to be inserted before the element!";
+    display: block; / * Ensures the content is on a new line * /
+    font-weight: bold; / * Optional styling * /
+    color: red; / * Optional styling * /
+}*/
+
+/* Cabecera de los codeblocks */
+.code-title {
+    background: #f5f2f0;
+    border-bottom: 1px solid #dadde1;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    font-size: 90%;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    margin-top:1rem;
+    margin-bottom: -0.5rem;
+}
+
+
+.diff-container {
+    overflow-x: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.line-remove {
+    background-color: #ffecec; /* Red background for removed lines */
+    display: block;
+}
+.line-add {
+    background-color: #e6ffed; /* Green background for added lines */
+    display: block;
+}

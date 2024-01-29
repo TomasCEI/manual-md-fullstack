@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Estadísticas Monty-hall 3 puertas</title>
+      <style>
+         .puerta {
+            width: 100px;
+            height: 200px;
+            border: 1px solid gray;
+            margin: 5px;
+            background: red;
+         }
+         .puertas {
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Lets Make a Deal: Simulación del problema de Monty Hall</h1>
+
+      <p>
+         La premisa del matemático Steve Selvin (1975) es la siguiente:<br />
+         <i
+            >Supón que estás en un concurso, y se te ofrece escoger entre tres
+            puertas: detrás de una de ellas hay un coche, y detrás de las otras,
+            cabras.<br />
+            Escoges una puerta, digamos la nº1, y el presentador, que sabe lo
+            que hay detrás de las puertas, abre otra, digamos la nº3, que
+            contiene una cabra.<br />
+            <br />Entonces te pregunta: <br /> </i
+         ><b
+            >¿No prefieres escoger la nº2?.<br />
+            ¿Es mejor para ti cambiar tu elección? </b
+         ><br /><br />
+         <a
+            href="https://es.wikipedia.org/wiki/Problema_de_Monty_Hall"
+            target="_blank"
+            >https://es.wikipedia.org/wiki/Problema_de_Monty_Hall</a
+         >
+      </p>
+      <div class="puertas">
+         <div>
+            <div class="puerta"></div>
+            <button onClick="jugar(0)">Puerta 1</button>
+         </div>
+         <div>
+            <div class="puerta"></div>
+            <button onClick="jugar(1)">Puerta 2</button>
+         </div>
+         <div>
+            <div class="puerta"></div>
+            <button onClick="jugar(2)">Puerta 3</button>
+         </div>
+         <div>
+            <input type="checkbox" id="cambiar" name="cambiar" checked />
+            <label for="cambiar" style="color: black"> Cambiar de puerta</label>
+         </div>
+      </div>
+      <button onClick="reset()">Reset</button>
+      <button onClick="AIvsAI()">AutoPlay</button>
+      <div class="txtResultado" style="border: 1px dashed black">
+         <!-- resultado -->
+      </div>
+
+      <hr />
+      <p>Ganadas: <span id="ganadas">0</span></p>
+      <p>Perdidas: <span id="perdidas">0</span></p>
+      <p>Empatadas: <span id="empatadas">0</span></p>
+
+      Gráfica:
+      <style>
+         div > div {
+            color: white;
+            width: 0%;
+            transition: width 1s;
+         }
+      </style>
+      <div
+         id="graficaWinLose"
+         style="
+            width: 100%;
+            background: gray;
+            display: flex;
+            text-align: center;
+         ">
+         <div style="background: red">Ganadas</div>
+         <div style="background: blue">Perdidas</div>
+      </div>
+
+      <hr />
+      Stats:
+      <div class="txtStats"></div>
+
+      <script>
+         const txtResultado = document.querySelector(".txtResultado");
+         const objScore = {
+            ganadas: 0,
+            perdidas: 0,
+            stats: {
+               premio: 0,
+               vacio: 0,
+            },
+         };
+         let puertas = [0, 0, 0]; // 0 es vacío, 1 es el Premio
+         let eleccionUsuario = null;
+         let eleccionAI = null;
+
+         let myIntervals = [];
+
+         function reset() {
+            txtResultado.innerHTML = "";
+
+            // reset all intervals from myIntervals
+            for (let i = 0; i < myIntervals.length; i++) {
+               clearInterval(myIntervals[i]);
+            }
+
+            objScore.ganadas = 0;
+            objScore.perdidas = 0;
+            objScore.stats.premio = 0;
+            objScore.stats.vacio = 0;
+            showScore();
+         }
+
+         function jugar(usuario) {
+            // Inicializar las puertas
+            puertas = [0, 0, 0];
+            let premio = Math.floor(Math.random() * 3);
+            puertas[premio] = 1;
+
+            // Elección del usuario
+            eleccionUsuario = usuario;
+
+            // Elección de la AI (siempre muestra una puerta vacía)
+            do {
+               eleccionAI = Math.floor(Math.random() * 3);
+            } while (eleccionAI == eleccionUsuario || puertas[eleccionAI] == 1);
+            //eleccionAI = 0;
+            // Cambiar la elección del usuario a la puerta restante (solo si hizo click en checkbox)
+            const tf_cambiar = document.getElementById("cambiar").checked;
+
+            if (tf_cambiar) {
+               for (let i = 0; i < 3; i++) {
+                  if (i != eleccionUsuario && i != eleccionAI) {
+                     eleccionUsuario = i;
+                     break;
+                  }
+               }
+            }
+
+            // Resultado
+            let resultado =
+               puertas[eleccionUsuario] == 1 ? "Ganaste" : "Perdiste";
+
+            // Estadísticas
+            if (puertas[eleccionUsuario] == 1) {
+               objScore.stats.premio++;
+            } else {
+               objScore.stats.vacio++;
+            }
+
+            // Puntuación
+            if (resultado == "Perdiste") {
+               objScore.perdidas++;
+            }
+            if (resultado == "Ganaste") {
+               objScore.ganadas++;
+            }
+            txtResultado.innerHTML = `<h1>${resultado}</h1>Has elegido la <b>Puerta ${
+               usuario + 1
+            }</b>, te han mostrado que la <b>puerta ${
+               eleccionAI + 1
+            } estaba vacía</b> y te preguntaron si deseabas cambiar de puerta.<br>`;
+
+            if (tf_cambiar) {
+               txtResultado.innerHTML += `Has decidido <b>CAMBIAR</b> de puerta y haz cambiado a <b>la puerta ${
+                  eleccionUsuario + 1
+               }</b> y detrás de ella había <b>${
+                  puertas[eleccionUsuario] == 1 ? "un Premio" : "mas vacio"
+               }</b>.`;
+            } else {
+               txtResultado.innerHTML += `Has decidido <b>NO CAMBIAR</b> de puerta y haz mantenido <b>la puerta ${
+                  eleccionUsuario + 1
+               }</b> y detrás de ella había <b>${
+                  puertas[eleccionUsuario] == 1 ? "un Premio" : "mas vacio"
+               }</b>.`;
+            }
+
+            showScore();
+         }
+
+         function showScore() {
+            txtResultado.innerHTML += `<p><h3>AI:</h3> León x${objScore.stats.premio} Vacío x${objScore.stats.vacio}</p>
+                                <p><h3>Usuario:</h3> Ganadas x${objScore.ganadas} Perdidas x${objScore.perdidas}</p>`;
+            graficar();
+         }
+
+         function elegirJugadorAI() {
+            return Math.floor(Math.random() * 3);
+         }
+
+         function AIvsAI() {
+            //add the interval into myIntervals
+            myIntervals.push(
+               setInterval(function () {
+                  const usuario = Math.floor(Math.random() * 3);
+                  jugar(usuario);
+               }, 100)
+            );
+            // setInterval(function () {
+            //    const usuario = Math.floor(Math.random() * 3);
+            //    jugar(usuario);
+            // }, 100);
+         }
+
+         function graficar() {
+            const total = objScore.ganadas + objScore.perdidas;
+            const porcentajeGanadas = (objScore.ganadas / total) * 100;
+            const porcentajePerdidas = (objScore.perdidas / total) * 100;
+
+            const graficaWinLose = document.querySelector("#graficaWinLose");
+
+            const divGanadas = graficaWinLose.querySelector("div:nth-child(1)");
+            const divPerdidas =
+               graficaWinLose.querySelector("div:nth-child(2)");
+
+            divGanadas.innerHTML =
+               "Ganadas: " + Math.round(porcentajeGanadas) + "%";
+            divPerdidas.innerHTML =
+               "Perdidas: " + Math.round(porcentajePerdidas) + "%";
+            divGanadas.style.width = porcentajeGanadas + "%";
+            divPerdidas.style.width = porcentajePerdidas + "%";
+         }
+      </script>
+   </body>
+</html>

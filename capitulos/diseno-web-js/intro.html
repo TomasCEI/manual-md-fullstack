@@ -1,0 +1,66 @@
+<h1>Soy intro Javascript HTML</h1>
+
+<h3>Comentarios</h3>
+
+```js
+    /* Podemos comentar de esta manera, al igual que en CSS... */
+    //...pero también tendremos esta para comentarios cortos de una línea
+```
+
+
+
+<h3>Variables</h3>
+
+<p>
+    En `JavaScript` tenemos variables de distintos tipos, pero *no* es necesario declararlas con un tipo de dato específico, ya que el lenguaje es de `tipado dinámico`.  <br>
+    Esto quiere decir que el tipo de dato de la variable se determina en tiempo de ejecución.<br><br>
+    Todas las variables de JavaScript deben identificarse con nombres únicos.<br><br>
+    Estos nombres únicos se denominan identificadores.<br><br>
+    Los identificadores pueden ser nombres cortos (como x e y) o nombres más descriptivos (edad, suma, volumen total).<br><br>
+</p>  
+
+<p>
+    Las reglas generales para construir nombres de variables (identificadores únicos) son:<br>
+    <ul>
+        <li>Los nombres pueden contener letras, dígitos, guiones bajos y signos de dólar.</li>
+        <li>Los nombres deben comenzar con una letra.</li>
+        <li>Los nombres también pueden comenzar con $ y _ (pero se suelen utilizar para casos especiales como librerías).</li>
+        <li>Los nombres distinguen entre mayúsculas y minúsculas (y e Y son variables diferentes).</li>
+        <li>Las palabras reservadas (como las palabras clave de JavaScript) no se pueden utilizar como nombres.</li>
+    </ul>
+</p>  
+
+
+
+Tenemos distintos tipos: <br>
+<ul>
+    Object - “object”
+    Function - “function”
+</ul>
+
+```js
+    var tf_seleccionado= true; // Booleano (verdadero o falso)
+
+    var nombre="Juan"; // Variable de texto / String
+
+    var x = 5; // Variable de Tipo numérico (entero o decimal)
+
+    var A_usuarios = ["Juan", "Pedro", "María"]; // Variable de Tipo Array
+
+    var user = {
+        nombre: "Juan",
+        apellido: "Perez",
+        edad: 25,
+        direccion: {
+            calle: "Av. Siempre Viva",
+            numero: "742"
+        }
+    }; // Variable de Tipo Objeto
+
+    var myFunction = function() {
+        return "Hola";
+    }; // Variable de Tipo Función
+```
+
+
+<h3>Variables del tipo Objeto</h3>

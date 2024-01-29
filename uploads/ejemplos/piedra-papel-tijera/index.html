@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel Tijera</title>
+</head>
+<body>
+
+    
+
+    <button onClick="jugar('piedra')">Piedra ✊</button>
+    <button onClick="jugar('papel')">Papel ✋</button>
+    <button onClick="jugar('tijera')">Tijera ✌</button>
+
+    <button onClick="
+            objScore.ganadas=0;
+            objScore.perdidas=0;
+            objScore.empatadas=0;
+            objScore.stats={
+                ai_piedra:0,
+                ai_papel:0,
+                ai_tijera:0,
+                user_piedra:0,
+                user_papel:0,
+                user_tijera:0
+            }
+            showScore();
+        ">Reset
+    </button>
+    <button onClick="AIvsAI()">AutoPlay</button>
+
+    <div class="txtResultado" style="border:1px dashed black">
+
+    </div>
+    <hr>
+    <p>Ganadas: <span id="ganadas">0</span></p>
+    <p>Perdidas: <span id="perdidas">0</span></p>
+    <p>Empatadas: <span id="empatadas">0</span></p>
+
+    Gráfica:
+    <style>
+        div>div{
+            color: white;
+            width: 0%;
+            transition: width 1s;
+        }
+    </style>
+    <div style="width:100%; background: gray; display:flex; text-align:center;">
+        <div style="background:red;">Ganadas</div>
+        <div style="background:blue;">Perdidas</div>
+    </div>
+
+    <hr>
+    Stats:
+    <div class="txtStats">
+    </div>
+
+    <script>
+
+        const txtGanadas=document.getElementById("ganadas");
+        const txtPerdidas=document.getElementById("perdidas");
+        const txtEmpatadas=document.getElementById("empatadas");
+
+        const txtResultado=document.querySelector(".txtResultado");
+        const txtStats=document.querySelector(".txtStats");
+
+        const objScore={
+            ganadas:0,
+            perdidas:0,
+            empatadas:0,
+            stats:{
+                ai_piedra:0,
+                ai_papel:0,
+                ai_tijera:0,
+                user_piedra:0,
+                user_papel:0,
+                user_tijera:0
+            }
+        }
+
+        console.log("text body: ",document.body.innerText);
+
+        function jugar(usuario){
+            const jugadorAI=elegirJugadorAI(); // devuelve piedra, papel o tijera
+
+            let resultado="";
+
+            if(jugadorAI == usuario){
+                console.log('Empate');
+                resultado='Empate';
+
+            } else if(usuario=='piedra'){
+
+                if(jugadorAI=='papel'){
+                    console.log('Perdiste');
+                    resultado='Perdiste';
+                }else{
+                    console.log('Ganaste');
+                    resultado='Ganaste';
+                }
+
+            } else if(usuario=='papel'){
+
+                if(jugadorAI=='tijera'){
+                    console.log('Perdiste');
+                    resultado='Perdiste';
+                }else{
+                    console.log('Ganaste');
+                    resultado='Ganaste';
+                }
+
+            } else if(usuario=='tijera'){
+
+                // Terneary Operator
+                resultado= (jugadorAI=='piedra') ? 'Perdiste' : 'Ganaste';
+
+                // if(jugadorAI=='piedra'){
+                //     console.log('Perdiste');
+                //     resultado='Perdiste';
+                // }else{
+                //     console.log('Ganaste');
+                //     resultado='Ganaste';
+                // }
+            }
+
+
+            // Stats de los Jugadores
+            if(usuario=='piedra'){ objScore.stats.user_piedra++; }
+            if(usuario=='papel'){ objScore.stats.user_papel++; }
+            if(usuario=='tijera'){ objScore.stats.user_tijera++; }
+            if(jugadorAI=='piedra'){ objScore.stats.ai_piedra++; }
+            if(jugadorAI=='papel'){ objScore.stats.ai_papel++; }
+            if(jugadorAI=='tijera'){ objScore.stats.ai_tijera++; }
+
+            // Score
+            if(resultado=='Empate') { objScore.empatadas++; }
+            if(resultado=='Perdiste') { objScore.perdidas++; }
+            if(resultado=='Ganaste') { objScore.ganadas++; }
+
+            txtResultado.innerHTML=`<h1>${resultado}</h1>Tu has tirado <b>${usuario.toUpperCase()}</b> y la AI ha tirado <b>${jugadorAI.toUpperCase()}</b>.`;
+
+            showScore();
+        }
+
+        function showScore(){
+
+            txtGanadas.innerHTML=objScore.ganadas;
+            txtPerdidas.innerHTML=objScore.perdidas;
+            txtEmpatadas.innerHTML=objScore.empatadas;
+
+            
+            txtStats.innerHTML=`<p><h3>AI:</h3> ✊x${objScore.stats.ai_piedra} ✋x${objScore.stats.ai_papel} ✌x${objScore.stats.ai_tijera}</p>
+                                <p><h3>Usuario:</h3> ✊x${objScore.stats.user_piedra} ✋x${objScore.stats.user_papel} ✌x${objScore.stats.user_tijera}</p>`;
+            graficar();
+        }
+
+        function elegirJugadorAI(){
+            const opciones=['piedra','papel','tijera'];
+            const numero=Math.floor(Math.random()*opciones.length);
+            return opciones[numero];
+        }
+
+        function AIvsAI(){
+            const opciones=['piedra','papel','tijera'];
+
+            setInterval(function(){
+                const numero=Math.floor(Math.random()*opciones.length);
+                const usuario=opciones[numero];
+                jugar(usuario);
+            },100);
+            // const numero=Math.floor(Math.random()*3);
+            // usuario=opciones[numero];
+            // jugar(usuario);
+        }
+
+        function graficar(){
+            const total=objScore.ganadas+objScore.perdidas;// +objScore.empatadas;
+            const porcentajeGanadas=(objScore.ganadas/total)*100;
+            const porcentajePerdidas=(objScore.perdidas/total)*100;
+            //const porcentajeEmpatadas=(objScore.empatadas/total)*100;
+
+            const divGanadas=document.querySelector("div>div:nth-child(1)");
+            const divPerdidas=document.querySelector("div>div:nth-child(2)");
+
+            divGanadas.innerHTML="Ganadas: "+Math.round(porcentajeGanadas)+"%";
+            divPerdidas.innerHTML="Perdidas: "+Math.round(porcentajePerdidas)+"%";
+            divGanadas.style.width=porcentajeGanadas+"%";
+            divPerdidas.style.width=porcentajePerdidas+"%";
+        }
+
+
+    </script>
+</body>
+</html>
