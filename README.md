@@ -11,6 +11,8 @@ Manual Web para alumnos del módulos Full-Stack
 -  API del DOM
 -  Git.
 
+---
+
 -  Métodos de los arrays.
 -  Funciones flecha.
 -  Desestructuración de objetos y arrays.
@@ -18,26 +20,38 @@ Manual Web para alumnos del módulos Full-Stack
 -  Promesas, async y await.
 -  Fetch
 
+---
+
 -  Naturaleza modular de Node, importar y exportar módulos.
 -  Módulos nativos.
 -  El sistema de ficheros.
 -  Flujos de datos (streams). Lectura y escritura.
 
+---
+
 -  El módulo HTTP, peticiones y creación de un servidor estático simple.
 -  Utilidades y NPM (node package manager).
+
+---
 
 -  Express como base de nuestro backend.
 -  Middleware, o todo lo que está entre la petición y la respuesta.
 -  Distintos tipos de respuesta.
 -  HTML dinámico, uso de sistemas de plantillas.
 
+---
+
 -  MySQL.
 -  Sintaxis SQL.
 -  Creación de un CRUD
 
+---
+
 -  ¿Qué son las expresiones regulares?
 -  Sintaxis.
 -  Usos comunes de las expresiones regulares.
+
+---
 
 -  Conceptos básicos de React.
 -  Elementos, componentes y propiedades.
@@ -46,52 +60,70 @@ Manual Web para alumnos del módulos Full-Stack
 -  Hooks.
 -  React Router.
 
+---
+
 -  PostgreSQL
 -  Crear, leer, actualizar y borrar.
 -  Integración con Express.
+
+---
 
 -  MongoDB
 -  Crear, leer, actualizar y borrar.
 -  Integración con Express.
 
+---
+
 -  Cookies y sesiones.
 -  Gestión de usuarios y el contenido al que pueden acceder.
 -  Seguridad y encriptación de contraseñas.
 
+---
+
 -  Deploy Vercel y otros
+
+---
 
 -  PHP como generador de HTML dinámico.
 -  PHP como backend.
 -  PHP y las bases de datos.
 -  Resolución de dudas y cierre.
 
-## Desarolladores:
+## Alumnos de FullStack CEI - 2024:
 
-Github Alumnos de FullStack CEI - 2024
+<table border="0" align="center">
+ <tr align="center">
+    <td>
+<strong>Federico</strong> <br>
+<a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=blue" target="_blank"></a></td>
+    <td>
+<strong>Jesús</strong> <br>
+<a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a></td>
+    <td>
+<strong>Karina</strong> <br>
+<a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=darkgreen" target="_blank"></a></td>
+ </tr>
+ <tr align="center">
+    <td><strong>Pablo F</strong> <br>
+   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a></td>
+    <td><strong>Carlos</strong> <br>
+   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a></td>
+    <td><strong>Diego</strong> <br>
+   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=orange" target="_blank"></a></td>
+ </tr>
+ <tr align="center">
+    <td><strong>Leonor</strong> <br>
+   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=purple" target="_blank"></a></td>
+    <td><strong>Pablo M</strong> <br>
+   <a href="https://github.com/PabloMocholi" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=cyan" target="_blank"></a></td>
+    <td>&nbsp;</td>
+ </tr>
+</table>
 
--  **_Federico_**  
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=blue" target="_blank"></a>
+Profe:
 
--  **_Jesús_**  
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
-
--  **_Karina_**  
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=darkgreen" target="_blank"></a>
-
--  **_Pablo F_**  
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
-
--  **_Carlos_**  
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
-
--  **_Diego_**  
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=orange" target="_blank"></a>
-
--  **_Leonor_**  
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=purple" target="_blank"></a>
-
--  **_Pablo M_**  
-   <a href="https://github.com/PabloMocholi" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=cyan" target="_blank"></a>
+-  **_Tomás_**  
+   <a href="https://github.com/SinaCulsan" target="_blank"> <img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=yellow" target="_blank"></a>
 
 ## Librerías JS de este manual:
 
