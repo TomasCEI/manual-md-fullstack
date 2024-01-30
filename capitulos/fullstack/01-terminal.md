@@ -1,6 +1,11 @@
 ## Terminal, Que es?
 
+![Terminal](./uploads/imgs/terminal1.jpg)
+
 Es una herramienta que nos permite mediante comandos interactuar con el sistema operativo (windows, linux, mac, etc).
+
+![Terminal](./uploads/imgs/terminal_mac.png)
+![Terminal](./uploads/imgs/terminal_windows.png)
 
 Nos permite gestionar archivos, carpetas, procesos, y hasta editar nuestro código. Cada sistema operativo tiene su propa terminal.
 
