@@ -124,6 +124,33 @@
          ]
       },
       {
+         "slug": "fullstack",
+         "titulo": "Full Stack",
+         "ficheros": [
+            {
+               "slug": "node-terminal",
+               "titulo": "NodeJS - Terminal",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "01-terminal.md"
+            },
+            {
+               "slug": "node-npm",
+               "titulo": "NodeJS - NPM",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "02-npm.md"
+            },
+            {
+               "slug": "node-proyecto",
+               "titulo": "NodeJS - Nuevo Proyecto",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "03-nuevo-proyecto.md"
+            }
+         ]
+      },
+      {
          "slug": "ejemplos",
          "titulo": "Ejemplos",
          "ficheros": [
