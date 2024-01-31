@@ -98,16 +98,16 @@ Manual Web para alumnos del módulos Full-Stack
 <a href="https://github.com/FedeCei" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=blue" target="_blank"></a></td>
     <td>
 <strong>Jesús</strong> <br>
-<a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a></td>
+<a href="https://github.com/jesusparfer27" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a></td>
     <td>
 <strong>Karina</strong> <br>
-<a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=darkgreen" target="_blank"></a></td>
+<a href="https://github.com/Karinahnatova" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=darkgreen" target="_blank"></a></td>
  </tr>
  <tr align="center">
     <td><strong>Pablo F</strong> <br>
    <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a></td>
     <td><strong>Carlos</strong> <br>
-   <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a></td>
+   <a href="https://github.com/CarlosVaquerCEI" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a></td>
     <td><strong>Diego</strong> <br>
    <a href="https://github.com/sierrita2000" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=orange" target="_blank"></a></td>
  </tr>
