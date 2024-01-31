@@ -95,7 +95,7 @@ Manual Web para alumnos del módulos Full-Stack
  <tr align="center">
     <td>
 <strong>Federico</strong> <br>
-<a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=blue" target="_blank"></a></td>
+<a href="https://github.com/FedeCei" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=blue" target="_blank"></a></td>
     <td>
 <strong>Jesús</strong> <br>
 <a href="https://github.com/" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a></td>
