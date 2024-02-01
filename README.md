@@ -141,8 +141,8 @@ Profe:
 -  [x] Procesar archivos `*.MD`
 -  [x] Estilos para bloques de código `markdown.css`
 -  [x] Título del manual desde `index.json`
--  [ ] Link a Github desde `index.json`
--  [ ] Botones Siguiente - Anterior capítulo
+-  [x] Link a Github desde `index.json`
+-  [x] Botones Siguiente - Anterior capítulo
 -  [x] Href a cada artículo desde el menu
 -  [ ] Expandir y contraer lista de temas por capítulos en el Sidebar
 -  [ ] Buscador de artículos `Ctrl + K`

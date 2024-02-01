@@ -158,6 +158,47 @@
          ]
       },
       {
+         "slug": "react",
+         "titulo": "ReactJS",
+         "ficheros": [
+            {
+               "slug": "introduccion",
+               "titulo": "Introducción",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "01-introduccion.md"
+            },
+            {
+               "slug": "modulos",
+               "titulo": "Módulos React",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "02-commonjs-vs-esm.md"
+            },
+            {
+               "slug": "componentes",
+               "titulo": "Componentes",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "03-componente.md"
+            },
+            {
+               "slug": "hooks-usestate",
+               "titulo": "Hook: useState",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "04-hooks-usestate.md"
+            },
+            {
+               "slug": "hooks-useeffect",
+               "titulo": "Hook: useEffect",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "05-hooks-useeffect.md"
+            }
+         ]
+      },
+      {
          "slug": "ejemplos",
          "titulo": "Ejemplos",
          "ficheros": [
