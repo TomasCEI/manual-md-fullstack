@@ -55,3 +55,8 @@ export const Componente2 = () => {
    return <h1>Mi componente 2</h1>;
 };
 ```
+
+Existen 2 tipos de componentes:
+
+-  Stateless: No tienen useState simplemente son funciones que aceptan props.
+-  Stateful: Tienen useState y useEffect, y manipulan los datos.

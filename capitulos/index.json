@@ -163,38 +163,73 @@
          "ficheros": [
             {
                "slug": "introduccion",
-               "titulo": "Introducción",
+               "titulo": "01. Introducción",
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "01-introduccion.md"
             },
             {
                "slug": "modulos",
-               "titulo": "Módulos React",
+               "titulo": "02. Módulos React",
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "02-commonjs-vs-esm.md"
             },
             {
                "slug": "componentes",
-               "titulo": "Componentes",
+               "titulo": "03. Componentes",
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "03-componente.md"
             },
             {
-               "slug": "hooks-usestate",
-               "titulo": "Hook: useState",
+               "slug": "interpolacion",
+               "titulo": "04. Interpolación",
                "keywords": [],
                "fecha": "2024-01-01 12:34",
-               "fichero": "04-hooks-usestate.md"
+               "fichero": "04-interpolacion.md"
+            },
+            {
+               "slug": "props",
+               "titulo": "05. Props",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "05-props.md"
+            },
+            {
+               "slug": "listas",
+               "titulo": "06. Listas y Keys",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "06-listas.md"
+            },
+            {
+               "slug": "spread",
+               "titulo": "07. Operador Spread",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "07-spread.md"
+            },
+            {
+               "slug": "condicionales",
+               "titulo": "08. Condicionales",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "08-condicionales.md"
+            },
+            {
+               "slug": "hooks-usestate",
+               "titulo": "09. Hook: useState",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "09-hooks-usestate.md"
             },
             {
                "slug": "hooks-useeffect",
-               "titulo": "Hook: useEffect",
+               "titulo": "10. Hook: useEffect",
                "keywords": [],
                "fecha": "2024-01-01 12:34",
-               "fichero": "05-hooks-useeffect.md"
+               "fichero": "10-hooks-useeffect.md"
             }
          ]
       },
