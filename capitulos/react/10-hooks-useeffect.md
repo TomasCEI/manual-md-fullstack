@@ -4,6 +4,8 @@ El hook useEffect recibe dos argumentos:
 -  El primero es una función que se ejecutará cuando se monte, desmonte o actualice el componente.
 -  El segundo es un array con las dependencias del hook. Si el array está vacío, la función se ejecutará solo cuando se monte y desmonte el componente. Si el array contiene elementos, la función se ejecutará cuando se monte, desmonte o actualice el componente, pero solo si los valores de las dependencias han cambiado.
 
+![img](uploads/imgs/react-hooks-useeffect.png)
+
 En el siguiente ejemplo, creamos un componente que muestra un mensaje cuando se monta y se desmonta.
 
 ```js
