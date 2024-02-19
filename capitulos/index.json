@@ -154,6 +154,20 @@
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "03-nuevo-proyecto.md"
+            },
+            {
+               "slug": "fetch-json",
+               "titulo": "Formato JSON",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "04-fetch-json.md"
+            },
+            {
+               "slug": "fetch-peticion",
+               "titulo": "Fetch",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "05-fetch-peticion.md"
             }
          ]
       },
