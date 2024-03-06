@@ -248,6 +248,73 @@
          ]
       },
       {
+         "slug": "db-sql",
+         "titulo": "Base de Datos (SQL)",
+         "ficheros": [
+            {
+               "slug": "introduccion",
+               "titulo": "01. Introducción",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "01-introduccion.md"
+            },
+            {
+               "slug": "tipos-de-datos",
+               "titulo": "02. Tipos de Datos",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-tipos-datos.md"
+            },
+            {
+               "slug": "crear-db",
+               "titulo": "03. Crear Base de Datos",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-crear-mysql-db.md"
+            },
+            {
+               "slug": "crear-tablas",
+               "titulo": "04. Crear Tablas",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-crear-tablas.md"
+            },
+            {
+               "slug": "insertar-datos",
+               "titulo": "05. Insertar Datos",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-insertar-datos.md"
+            },
+            {
+               "slug": "consultas-sql",
+               "titulo": "06. Consultas",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-consultas.md"
+            },
+            {
+               "slug": "actualizar-datos",
+               "titulo": "07. Actualizar Datos",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-actualizar-datos.md"
+            },
+            {
+               "slug": "eliminar-datos",
+               "titulo": "08. Eliminar Datos",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-eliminar-datos.md"
+            }
+         ]
+      },
+      {
+         "slug": "db-mongodb",
+         "titulo": "Base de Datos (MongoDB)",
+         "ficheros": []
+      },
+      {
          "slug": "ejemplos",
          "titulo": "Ejemplos",
          "ficheros": [
