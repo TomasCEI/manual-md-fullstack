@@ -306,6 +306,13 @@
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "xx-eliminar-datos.md"
+            },
+            {
+               "slug": "primary-foreign-keys",
+               "titulo": "09. Keys (Primary, Foreign)",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "xx-primary-foreign-keys.md"
             }
          ]
       },
