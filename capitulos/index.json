@@ -168,6 +168,13 @@
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "05-fetch-peticion.md"
+            },
+            {
+               "slug": "variables-entorno",
+               "titulo": "Variables de Entorno",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "0X-variables-entorno.md"
             }
          ]
       },
@@ -244,6 +251,20 @@
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "10-hooks-useeffect.md"
+            },
+            {
+               "slug": "hooks-useref",
+               "titulo": "11. Hook: useRef",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "11-hooks-useref.md"
+            },
+            {
+               "slug": "hooks-usecontect",
+               "titulo": "12. Hook: useContext",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "12-hooks-usecontext.md"
             }
          ]
       },
