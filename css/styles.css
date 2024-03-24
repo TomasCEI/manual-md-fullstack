@@ -123,6 +123,33 @@ header {
    border-bottom: 1px solid gray;
 }
 
+/* ----- Toggle de Menu ---- */
+.Nav-articulos {
+   max-height: 1000px; /* Set a large enough value */
+   overflow: hidden;
+   transition: max-height 0.3s ease;
+}
+
+.Nav-articulos.closed {
+   max-height: 0;
+}
+
+.Nav-toggle {
+   /* display: flex; */
+   padding: 5px;
+   cursor: pointer;
+}
+.Nav-toggle .icon {
+   font-family: monospace; /* Add this line */
+}
+
+.Nav-toggle:hover {
+   /* Remove underline from links */
+   text-decoration: none;
+}
+
+
+
 /* ----- Estilos de Contenido Markdown ----- */
 .Card-Content img {
    max-width: 90%;
@@ -218,3 +245,41 @@ pre {
 .token.comment {
    /* color: green; */
 }
+
+
+/* --------------- Estilos del Modal --------------- */
+/* .modal {
+   display: none;
+   position: fixed;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 9999;
+ }
+ 
+ .modal-content {
+   background-color: #f2f2f2;
+   color: #000;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+ } */
+
+ .modal {
+   display: block;
+   position: fixed;
+   bottom: -100px; /* Start offscreen */
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 9999;
+   transition: bottom 0.5s ease-in-out; /* Add transition */
+ }
+ 
+
+ .modal-content {
+   background-color: #f2f2f2;
+   color: #000;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+ }

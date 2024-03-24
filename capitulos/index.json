@@ -270,7 +270,7 @@
       },
       {
          "slug": "db-sql",
-         "titulo": "Base de Datos (SQL)",
+         "titulo": "DB SQL",
          "ficheros": [
             {
                "slug": "introduccion",
@@ -339,8 +339,47 @@
       },
       {
          "slug": "db-mongodb",
-         "titulo": "Base de Datos (MongoDB)",
-         "ficheros": []
+         "titulo": "DB MongoDB",
+         "ficheros": [
+            
+            {
+               "slug": "introduccion",
+               "titulo": "01. Introducción",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "01-introduccion.md"
+            },{
+               "slug": "instalacion",
+               "titulo": "02. Instalación",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "02-instalacion.md"
+            },{
+               "slug": "mongodb-compass",
+               "titulo": "03. MongoDB Compass",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "03-mongodb-compass.md"
+            },{
+               "slug": "mongoose-express",
+               "titulo": "04. Mongoose",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "04-mongoose-express.md"
+            },{
+               "slug": "mongoose-consultas",
+               "titulo": "05. Consultas",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "05-mongoose-consultas.md"
+            },{
+               "slug": "mongoose-mutations",
+               "titulo": "06. Mutaciones",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "06-mongoose-mutations.md"
+            }
+         ]
       },
       {
          "slug": "ejemplos",
