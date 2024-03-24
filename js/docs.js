@@ -18,7 +18,10 @@ function crearMenuCapitulos(manual) {
    manual.capitulos.forEach((capitulo, index) => {
       const capituloItem = document.createElement("li");
       capituloItem.classList.add("Nav-capitulo");
-      capituloItem.innerHTML = `<a href="?cap=${capitulo.slug}">${capitulo.titulo}</a>`;
+      //capituloItem.innerHTML = `<a href="?cap=${capitulo.slug}">${capitulo.titulo}</a> <span class="Nav-toggle">-</span>`;
+      capituloItem.innerHTML = `<a class="Nav-toggle" href="#"><span class="icon">-</span> ${capitulo.titulo}</a></span>`;
+
+
 
       if (capitulo.ficheros.length > 0) {
          const subMenu = document.createElement("ul");
@@ -33,6 +36,29 @@ function crearMenuCapitulos(manual) {
       }
       menuCapitulos.appendChild(capituloItem);
    });
+
+
+   // hacer funcionar los botones de abrir/cerrar el submenu (data-toggle)
+   //const toggles = document.querySelectorAll('[data-toggle]');
+   const toggles = document.querySelectorAll('.Nav-toggle');
+   toggles.forEach(NavToggle => {
+      NavToggle.addEventListener('click', function(e) {
+         e.preventDefault();
+         
+         // subo al pedre, luego busco el primer hijo con clase Nav-articulos
+         const parent = this.closest('.Nav-capitulo'); 
+         const icon = this.querySelector('.icon');
+         const target = parent.querySelector('.Nav-articulos');
+
+         // Toggle the content of the span
+         target.classList.toggle('closed');
+         // Toggle the + and - icons
+         icon.textContent = target.classList.contains("closed") ? "+" : "-";
+      });
+   });
+
+
+
 }
 
 fetch(urlIndexManual)
@@ -255,6 +281,67 @@ function imprimirTarjetas() {
          });
          addContentBeforePre();
 
+
+         // funcionalidad de copy to clipboard
+         // Select all bloque-copy buttons
+         const bloqueCopyButtons = document.querySelectorAll(".bloque-copy");
+
+         // Attach click event listener to each button
+         bloqueCopyButtons.forEach(button => {
+            button.addEventListener("click", function() {
+               //alert("click en copy");
+                  // Find the closest pre element
+                  const preElement = this.closest(".code-title").nextElementSibling;
+
+                  // Get the code content
+                  const codeContent = preElement.querySelector("code").innerText;
+
+                  // Copy the content to clipboard
+                  navigator.clipboard.writeText(codeContent)
+                     .then(() => {
+                        console.log("Code copied to clipboard");
+                        // You can add visual feedback here if needed
+                        
+                           // Example usage: Show a modal message
+                           showModal("📋 Código copiado al portapapeles!");
+                     })
+                     .catch(error => {
+                        console.error("Failed to copy code: ", error);
+                     });
+            });
+         });
+
+
+         // Funcionalidad de marcar como leído
+         const checkboxes = document.querySelectorAll(".tf_leido");
+         checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", function() {
+               //alert("click en checkbox");
+               const id = this.id;
+               const isChecked = this.checked;
+               console.log("Checkbox clicked:", id, isChecked);
+               showModal("📋 Función en desarrollo. Pero que bueno te interesa marcar como leído!");
+            });
+         });
+
+         // Funcionalidad de click en tags
+         // Select all Keyword elements
+         const keywords = document.querySelectorAll(".Keyword");
+         keywords.forEach(keyword => {
+            keyword.addEventListener("click", function() {
+               //alert("click en keyword");
+               // Get the keyword text
+               const keywordText = this.innerText;
+
+               // Do something with the keyword text
+               console.log("Keyword clicked:", keywordText);
+               
+               showModal(`<i class="fa fa-paperclip"></i> Función en desarrollo. Pero que bueno te interesa <br><strong>${keywordText}</strong>`);
+            });
+         });
+
+
+
          // scroll hacia el href seleccionado
          const hash = window.location.hash;
          if (hash) {
@@ -268,6 +355,27 @@ function imprimirTarjetas() {
          console.error("Error fetching or processing Markdown:", error);
       });
 }
+
+
+let modalTimeout; // Declare this outside your function
+function showModal(message) {
+   // Clear the previous timeout
+   if (modalTimeout) {
+      clearTimeout(modalTimeout);
+   }
+   const modal = document.getElementById("modal");
+   const modalMessage = document.getElementById("modal-message");
+ 
+   //modalMessage.textContent = message || "This is a modal message.";
+   modalMessage.innerHTML = message || "This is a modal message.";
+   modal.style.bottom = "20px";
+ 
+   // Set the new timeout and store its ID
+   modalTimeout = setTimeout(() => {
+      modal.style.bottom = "-100px";
+   }, 3000);
+ }
+ 
 
 // Obtener lista de Capitulos (html o md) y mostrarlos en orden
 document.addEventListener("DOMContentLoaded", function () {});
