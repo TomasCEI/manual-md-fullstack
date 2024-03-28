@@ -170,11 +170,11 @@
                "fichero": "05-fetch-peticion.md"
             },
             {
-               "slug": "variables-entorno",
-               "titulo": "Variables de Entorno",
+               "slug": "regex",
+               "titulo": "Expresiones Regulares",
                "keywords": [],
                "fecha": "2024-01-01 12:34",
-               "fichero": "0X-variables-entorno.md"
+               "fichero": "0X-regex.md"
             }
          ]
       },
