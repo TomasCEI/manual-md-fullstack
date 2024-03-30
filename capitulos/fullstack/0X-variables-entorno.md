@@ -1,5 +1,12 @@
-Link de interes:
-[Explicación - creación y ejemplos](https://www.victorvr.com/tutorial/variables-de-entorno-con-nodejs)
+
+
+# Que son?
+
+Son valores que se pueden configurar en el sistema operativo y que pueden ser accedidos por las aplicaciones que se ejecutan en ese sistema. Estas variables se utilizan para configurar el entorno de ejecución de una aplicación, como por ejemplo, la URL de una base de datos, el puerto en el que se ejecuta un servidor, o el nivel de log de una aplicación.
+
+# Por que son necesarias?
+
+Necesarias para configurar el entorno de ejecución de una aplicación de forma dinámica, sin tener que modificar el código fuente de la aplicación. Esto permite que una aplicación pueda ejecutarse en diferentes entornos sin tener que modificar su código fuente, lo que facilita su despliegue y mantenimiento.
 
 ## Carga de variables desde Linux y Windows
 
@@ -67,3 +74,10 @@ const apiKey = import.meta.env.VITE_API_KEY;
 ```
 
 Recuerda que en VITE, todas las variables de entorno deben comenzar con `VITE_` para que sean accesibles en el código.
+
+
+### Ejemplo de uso
+
+Link de interes y manual de uso con ejemplos:
+
+[Explicación - creación y ejemplos](https://www.victorvr.com/tutorial/variables-de-entorno-con-nodejs)
