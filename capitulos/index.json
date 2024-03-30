@@ -378,6 +378,12 @@
                "keywords": [],
                "fecha": "2024-01-01 12:34",
                "fichero": "06-mongoose-mutations.md"
+            },{
+               "slug": "mongoose-relations",
+               "titulo": "07. Realciones",
+               "keywords": [],
+               "fecha": "2024-01-01 12:34",
+               "fichero": "07-mongoose-relations.md"
             }
          ]
       },

@@ -38,16 +38,59 @@ router.get('/', async (req, res) => {
 })
 
 ```
+### Operadores de Comparación
+
+Al filtrar mediante propieades, podemo utilizar operadores de comparación en nuestras consultas. Algunos de los operadores más comunes son:
+
+- `$eq`:    (equal) es igual al valor especificado.
+- `$ne`:    (not equal) no es igual al valor especificado.
+- `$gt`:    (greater than) es mayor que el valor especificado.
+- `$gte`:   (greater or equal) es mayor o igual al valor especificado.
+- `$lt`:    (less than) es menor que el valor especificado.
+- `$lte`:   (less or equal) es menor o igual al valor especificado.
+- `$in`:    (in) está en un array.
+- `$nin`:   (not in) no está en un array.
+- `$exists`: campo existe o no.
+- `$regex`: coincide con la expresión regular especificada.
+
+Por ejemplo si quisieramos traer las mascotas entre 2 y 5 años de edad podríamos realizar una consulta como la siguiente:
+
+```javascript
+
+// Buscar todas las mascotas entre 2 y 5 años
+const arrayMascotas = await Mascota.find({ edad: { $gte: 2, $lte: 5 } });
+
+// Buscar todas las mascotas que no tengan 3 años
+const arrayMascotas = await Mascota.find({ edad: { $ne: 3 } });
+```
+
+
+Uno de los operadores mas potentes, es el de `$regex`, que nos permite buscar por expresiones regulares. Por ejemplo, si quisieramos buscar todas las mascotas cuyo nombre empiece con la letra "p", podríamos realizar una consulta como la siguiente:
+
+
+
+```js
+// utilizamos el flag i para que sea insensible a mayúsculas y minúsculas
+const arrayMascotas = await Mascota.find({ nombre: { $regex: /^p/, $options: 'i' } });
+// o su equivalente
+const arrayMascotas = await Mascota.find({ nombre: { $regex: /^p/i } });
+// o su equivalente
+const arrayMascotas = await Mascota.find({ nombre: { $regex: new RegExp('^p', 'i') } });
+//
+```
+
+**IMPORTANTE:** Si deseamos construir nuestros patrones de búsqueda de manera dinámica deberemos utilizar el constructor `new RegExp()` de JS y `templates Lietarales`. Por ejemplo:
+
+```javascript	
+const nombre= "Franchesca";
+const reg = new RegExp(`^${nombre}`, 'i');
+const arrayMascotas = await Mascota.find({ nombre: { $regex: reg } });
+```
+
 
 ### Filtros
 
-Podemos aplicar filtros a nuestras consultas, y los pdremos combinar como como si fueran promesas. 
-
-Tenemos varios tipos de Filtros:
-- Filtros Generales
-- Filtros para find
-- Filtros de Update
-- Filtros de FindOne
+Podemos aplicar filtros a nuestras consultas, y los podremos combinar como si fueran promesas. 
 
 ```javascript
 Modelo.find({ propiedad: valor })
@@ -57,7 +100,6 @@ Modelo.find({ propiedad: valor })
       .select({nombre:1, apellido:1}) // Seleccionar solo los campos nombre y apellido
       .select({edad:0})   // Seleccionar todos menos edad
 ```
-
 
 
 

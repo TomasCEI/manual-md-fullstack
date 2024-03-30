@@ -2,7 +2,8 @@ Mongoose es un `ODM (Object Document Mapping)` para **MongoDB**.
 
 Es un módulo para utilizar nuestras APIs en ExpressJS que nos permite conectar con MongoDB y realizar operaciones CRUD de manera sencilla.
 
-[Sitio Oficial Mongoose](https://mongoosejs.com/docs/index.html)
+Hay que tener en cuenta que los métodos, funciones y propiedades **no son iguales** a las de MongoDB, por lo que deben tener en cuenta la [documentación oficial de Mongoose](https://mongoosejs.com/docs/index.html) a la hora de crear sus esquemas y consultas.
+
 
 ## Instalación
 
@@ -70,6 +71,7 @@ Por ejemplo, si queremos guardar una colección de mascotas. la definición de u
     const nombreEsquema = new mongoose.Schema({
         id: String,
         nombre: String,
+        edad: Number,
         descripcion: String
     }, options);
 
@@ -77,4 +79,41 @@ Por ejemplo, si queremos guardar una colección de mascotas. la definición de u
     const Mascota = mongoose.model('Mascota', mascotaSchema);
 ```
 
-Al tener creado nuestro modelo, podremos realizar operaciones CRUD sobre la colección de mascotas, denominadas Acciones.
+Al tener creado nuestro modelo, podremos realizar operaciones CRUD sobre la colección de mascotas.
+
+Dentro del `Schema`, podemos definir los `tipos de datos` que vamos a guardar en cada campo del documento. Entre los tipos de datos para los Esquemas Mongoose (no confundir con los tipos de Datos que soporta MongoDB), algunos de los mas comunes son:
+
+- `String`
+- `Number`
+- `Date`
+- `Boolean`
+- `Mixed` (cualquier tipo de dato)
+- `ObjectId` (objeto de mongoDB que incluye un ID)
+- `[]`  (Array)
+- `Schema` (permite anidar esquemas uno dentro de otro)
+- `UUID`
+
+pero hay más, e incluso puedes creer tus propios tipos de datos.
+
+En vez de definir un tipo de dato como `String` o `Number`, podemos definir un objeto con las propiedades que queremos para ese campo:
+
+```javascript
+    const misDatos = new mongoose.Schema({
+        nombre: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            lowercase: true,
+            trim: true
+        },
+        edad: {
+            type: Number,
+            min: 18,
+            max: 65
+        }
+    }, options);
+```

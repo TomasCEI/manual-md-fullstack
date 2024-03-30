@@ -41,18 +41,23 @@ await Alumno.findByIdAndDelete("660052bdee9f87f1fc7a2bb5");
 ### Más métodos de Mongoose
 
 ```javascript	
-Model.deleteMany()
-Model.deleteOne()
-Model.find()
-Model.findById()
-Model.findByIdAndDelete()
-Model.findByIdAndRemove() // Deprecated
-Model.findByIdAndUpdate()
-Model.findOne()
-Model.findOneAndDelete()
-Model.findOneAndReplace()
-Model.findOneAndUpdate()
-Model.replaceOne()
-Model.updateMany()
-Model.updateOne()
+- Model.find() // Buscar varios documentos (array)
+- Model.findById() // Buscar un documento por su ID único (objeto)
+- Model.findOne() // Buscar primer resultado de búsqueda (objeto)
+
+- Model.deleteMany() // Eliminar varios documentos
+- Model.deleteOne() // Eliminar un solo documento
+
+- Model.replaceOne() // Reemplazar un solo documento basado en un criterio de búsqueda con otro documento proporcionado
+- Model.updateMany() // Actualizar varios documentos basados en un criterio de búsqueda
+- Model.updateOne() // Actualizar un solo documento basado en un criterio de búsqueda
+
+- Model.findOneAndDelete() // Buscar el primer resultado y luego eliminarlo
+- Model.findOneAndUpdate()
+- Model.findByIdAndUpdate() // Equivalente a `findOneAndUpdate({ _id: id }, ...  })`
+- Model.findByIdAndDelete() // Equivalente a "findOneAndDelete({ _id: id })"
+
+// Métodos marcados como deprecados
+- Model.findOneAndRemove() // Se recomienda el uso de `findOneAndDelete`
+- Model.findByIdAndRemove() // Se recomienda el uso de `findOneAndDelete`
 ```
