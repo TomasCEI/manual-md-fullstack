@@ -432,6 +432,13 @@
                "keywords": [],
                "fecha": "2023-11-01 12:23",
                "fichero": "styling-cards.md"
+            },
+            {
+               "slug": "upload-multer",
+               "titulo": "Upload con Multer",
+               "keywords": [],
+               "fecha": "2023-11-01 12:23",
+               "fichero": "upload-multer.md"
             }
          ]
       },
