@@ -79,7 +79,7 @@ app.post("/upload", upload.single('profile'), (req, res) => {
         // req.body will hold the text fields
         console.log("body es:", req.body); 
 
-        res.send({
+        res.json({
             msg: "Archivo subido correctamente", 
             file: req.file, 
             body: req.body,
