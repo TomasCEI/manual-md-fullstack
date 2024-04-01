@@ -110,8 +110,8 @@ Crear un archivo `public/index.html` donde podremos generar un formulario para s
 
         <h3>Upload de archivos</h3>
 
-        <label for="titulo">Título</label>
-        <input type="text" name="titulo" id="titulo" ><br />
+        <label for="nickname">Nickname</label>
+        <input type="text" name="nick" id="nickname" ><br />
 
         <label for="profile">Imagen</label>
         <input type="file" name="profile" id="profile" /><br />
